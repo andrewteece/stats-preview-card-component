@@ -37,12 +37,17 @@ blockquote,
 dl,
 dd {
   margin: 0;
+  padding: 0;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role="list"],
 ol[role="list"] {
   list-style: none;
+}
+
+ul {
+  list-style-type: none;
 }
 
 /* Set core root defaults */
@@ -81,49 +86,55 @@ select {
 /* GLOBAL STYLES */
 
 body {
-    display: grid;
-    align-items: center;
-    font-family: var(--ff-main);
-    min-height: 100vh;
-    color: var(--clr-neutral-200);
-    background-color: var(--clr-primary-900);
+  background-color: var(--clr-primary-900);
+  font-family: var(--ff-main);
+  font-weight: var(--fw-base);
+  color: var(--clr-neutral-100);
+}
     
+h2 {
+  font-size: 1.8125rem;
+  line-height: 1.1;
+  padding: 2rem;
 }
 
-ul {
-    list-style-type: none;
+h2,
+p {
+  text-align: center;
 }
+
+p {
+  font-weight: var(--fw-base);
+  color: var(--clr-neutral-200);
+}
+
+
+    
+
+
+
 
 /* LAYOUT STYLES */
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--clr-primary-700);
-    text-align: center;
-    border-radius: .625rem;
-    outline: 2px solid #fff;
-    
+  background-color: var(--clr-primary-700);
+  color: var(--clr-neutral-100);
+  margin: 3.125rem 1.25rem;
+  padding: 0 0 1.25rem;
+  border-radius: .625rem;
+  text-align: center;
 }
 
-.card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    outline: 2px solid red;
-}
-
-.card ul {
-    display: flex;
-    flex-direction: column;
     
-}
+
+
+
+
+
+
+
 
 /* UTILITY STYLES */
-
-
 
 .sr__only {  /* for accessibility */
     position: absolute;
@@ -135,13 +146,48 @@ ul {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
-  }
+}
+
+.card__image {
+  margin: 0 auto;
+  border-radius: .625rem .625rem 0 0;
+}
+
+.card__overlay {
+  background: hsla(277, 64%, 61%, .7);
+  overflow: hidden;
+}
+
+.text__accent {
+  color: var(--clr-primary-500);
+}
+
+.main__text {
+  padding: .5rem 2rem 2rem 2rem;
+}
+
+.stat__number {
+  font-size: 1.5rem;
+  font-weight: var(--fw-bold);
+  color: var(--clr-neutral-100);
+}
+
+.stat__text {
+  font-family: var(--ff-accent);
+  font-size: .75rem;
+  color: var(--clr-neutral-300);
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+  letter-spacing: .0625rem;
+}
+
 
 
 /* FEM ATTRIB */
 
 .attribution { 
-    font-size: 11px; 
+    padding-top: 1rem;
+    font-size: .625rem;
     text-align: center; 
 }
  .attribution a { 
