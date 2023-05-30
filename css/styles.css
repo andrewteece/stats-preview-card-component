@@ -1,20 +1,19 @@
 :root {
+  --clr-primary-500: hsl(277, 64%, 61%); /* accent */
+  --clr-primary-700: hsl(244, 38%, 16%); /* card background */
+  --clr-primary-900: hsl(233, 47%, 7%); /* main background */
 
---clr-primary-500: hsl(277, 64%, 61%); /* accent */
---clr-primary-700: hsl(244, 38%, 16%); /* card background */
---clr-primary-900: hsl(233, 47%, 7%); /* main background */
+  --clr-neutral-100: hsl(0, 0%, 100%); /* main heading & stats */
+  --clr-neutral-200: hsla(0, 0%, 100%, 0.75); /* main paragraphs */
+  --clr-neutral-300: hsla(0, 0%, 100%, 0.6); /* stat headings */
 
---clr-neutral-100: hsl(0, 0%, 100%); /* main heading & stats */
---clr-neutral-200: hsla(0, 0%, 100%, 0.75); /* main paragraphs */
---clr-neutral-300: hsla(0, 0%, 100%, 0.6); /* stat headings */
+  --fs-base: 0.9375rem;
 
---fs-base: .9375rem;
+  --fw-base: 400;
+  --fw-bold: 700;
 
---fw-base: 400;
---fw-bold: 700;
-
---ff-main: 'Inter', sans-serif;
---ff-accent: 'Lexend Deca', sans-serif;
+  --ff-main: "Inter", sans-serif;
+  --ff-accent: "Lexend Deca", sans-serif;
 }
 
 /* CSS BASIC RESET -- https://piccalil.li/blog/a-modern-css-reset */
@@ -91,25 +90,18 @@ body {
   font-weight: var(--fw-base);
   color: var(--clr-neutral-100);
 }
-    
+
 .card__heading {
   font-size: 1.8125rem;
   line-height: 1.1;
   padding: 2rem;
 }
 
-
 .card__text {
   font-weight: var(--fw-base);
   color: var(--clr-neutral-200);
-  padding: .5rem 2rem 2rem 2rem;
+  padding: 0.5rem 2rem 2rem 2rem;
 }
-
-
-    
-
-
-
 
 /* LAYOUT STYLES */
 
@@ -118,43 +110,55 @@ body {
   color: var(--clr-neutral-100);
   margin: 3.125rem 1.25rem;
   padding: 0 0 1.25rem;
-  border-radius: .625rem;
+  border-radius: 0.625rem;
   text-align: center;
-
+  max-width: 90rem;
 }
 
+.card-image__wrapper {
+  display: flex;
+}
 
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-    
+@media (min-width: 50em) {
+  .card-image__wrapper{
+    flex-direction: row-reverse;
+  }
 
-
-
-
-
-
-
+  .card {
+    flex-direction: row-reverse;
+  }
+}
 
 /* UTILITY STYLES */
 
-.sr__only {  /* for accessibility */
-    position: absolute;
-    width: 0.063rem;
-    height: 0.063rem;
-    padding: 0;
-    margin: -0.063rem;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+.sr__only {
+  /* for accessibility */
+  position: absolute;
+  width: 0.063rem;
+  height: 0.063rem;
+  padding: 0;
+  margin: -0.063rem;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .card__image {
   background: url(/images/image-header-mobile.jpg), var(--clr-primary-500);
   background-blend-mode: multiply;
   background-size: cover;
+  width: 100%;
   height: 14.5rem;
-  border-radius: .625rem .625rem 0 0;
-
+  border-radius: 0.625rem 0.625rem 0 0;
+  outline: 2px solid red;
 }
 
 .text__accent {
@@ -162,7 +166,7 @@ body {
 }
 
 .main__text {
-  padding: .5rem 2rem 2rem 2rem;
+  padding: 0.5rem 2rem 2rem 2rem;
 }
 
 .stats__number {
@@ -173,36 +177,30 @@ body {
 
 .stats__text {
   font-family: var(--ff-accent);
-  font-size: .75rem;
+  font-size: 0.75rem;
   color: var(--clr-neutral-300);
   text-transform: uppercase;
   padding-bottom: 1rem;
-  letter-spacing: .0625rem;
+  letter-spacing: 0.0625rem;
 }
 
-@media (min-width: 50rem) {
-
-
+/* @media (min-width: 50rem) {
   .card__image {
     background: url(/images/image-header-desktop.jpg), var(--clr-primary-500);
     background-blend-mode: multiply;
     background-size: cover;
     height: 14.5rem;
-    border-radius: .625rem .625rem 0 0;
-  
+    border-radius: 0.625rem 0.625rem 0 0;
   }
-}
-
-
+} */
 
 /* FEM ATTRIB */
 
-.attribution { 
-    padding-top: 1rem;
-    font-size: .625rem;
-    text-align: center; 
+.attribution {
+  padding-top: 1rem;
+  font-size: 0.625rem;
+  text-align: center;
 }
- .attribution a { 
-    color: hsl(228, 45%, 44%); 
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
-
